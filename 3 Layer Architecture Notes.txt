@@ -1,0 +1,26 @@
+LOGIN MODULE: As a user, I can login into Dell EMC application with valid UN & valid PWD
+
+FRONT END DEV CODE:
+
+vc#1: ensure un & pwd are both entered
+vc#2: if un or PWD is not entered, then throw some warnings to the user
+vc#3: i will not send the code to the next layer [back end layer/api layer] until I see a UN & PWD entered by the user and that he also clicks on LOGIN button
+vc#4: i do not know which is valid UN & valid PWD
+vc#5: I will forward the API call to the next guy [back-end] if un & pwd are entered
+vc#6: i will not throw any technical errors to the end user, i will convert those tech errors into human readable format
+
+
+BACK END DEV CODE:
+
+vc#1: I should recive a valid API syntax from frontend code
+vc#2: I will throw error if the API doesn't have UN or PWD or any other mistakes in the API syntax
+vc#3: i do not know which is valid UN & valid PWD
+vc#4: i will forward the API call to the next guy [server side/db] if API syntax is 100% valid
+
+SERVER SIDE/DB CODE:
+
+vc#1: have I received the right syntax of API and its data
+vc#2: i will check if UN & PWD are valid as per DB records
+vc#3: if its valid, i will throw success message/200 OK code
+vc#4: if its invalid, i will throw failure message/400 Bad request
+
